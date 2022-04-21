@@ -11,21 +11,4 @@ $("#form").submit((e)=>{
     $("#no-words").val("");
     $("#no-para").val("");
 
-    let promise = DinoIpsum.getIpsum(paraInput , wordInput);
-    promise
-    .then(function(response){
-        let htmlElement = "";
-        let resp = JSON.parse(response);
-        resp.forEach((element) => {
-            let para = "<p>";
-            element.forEach((e) => { 
-                para += `${e} `
-            });
-            htmlElement += `${para} </p>`
-        }) 
-        $(".display").html(htmlElement)
-    },
-    function(reject){
-    })
-    $(".display").html(reject);
-})
+    
